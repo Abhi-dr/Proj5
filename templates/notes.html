@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div3 {
+            border: 2px solid black;
+            padding: .2rem;
+            width: 17rem;
+            margin-bottom: 2rem;
+            background-color: rgb(150, 187, 168);
+        }
+
+        h2 {
+            margin-top: .3rem;
+            margin-bottom: .3rem;
+        }
+
+        hr {
+            color: black;
+
+        }
+
+        #txtarea {
+            
+        }
+
+        #main1 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            margin-left: 8rem;
+            margin-top: 2rem;
+
+        }
+
+        #main {
+            display: flex;
+            justify-content: space-between;
+            height: 10vh;
+            background-color: rgb(97, 134, 156);
+        }
+
+        #div1 {
+            margin-left: .7rem;
+        }
+
+        #div2 {
+            margin-top: 1.4rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <div id="div1">
+            <h1>Welcome {{ user.first_name }}</h1>
+        </div>
+        <div id="main">
+            <div id="div2"><a id="link" href="dashboard">Add note</a></div>
+            <div id="div2"><a id="link" href="logout">LogOut</a></div>
+
+        </div>
+    </div>
+    <br><br>
+    <div id="main1">
+
+        {% for note in notes %}
+
+        <div id="div3">
+            <h2>{{ note.id }}: {{ note.title }}</h2>
+            <hr>
+            <center>
+                <h2>-Description- </h2>
+                <center>
+                    <p>{{ note.description }}</p>
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+
+</body>
+
+</html>
